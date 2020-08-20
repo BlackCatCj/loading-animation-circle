@@ -34,6 +34,7 @@ body {
     /* background: red; */
 
     /* 视距 */
+    /* !通过调节视距，达到不同的效果，越小，则相当于人眼距离屏幕越近，越有冲击力 */
     perspective: 500px;
 }
 .main .iClass{
