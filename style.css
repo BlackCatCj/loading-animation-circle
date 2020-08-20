@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* !防止底部的滚动条造成页面抖动 同时禁止了页面通过滚轮进行滚动，但是仍可用键盘滚动 */
+html {
+    /* overflow-x: hidden;
+    overflow-y:hidden; */
+    /* 上面两行和这一行效果一样 */
+    overflow: hidden;
+}
+/* !隐藏右侧的滚动条 */
+::-webkit-scrollbar {
+    overflow-x:hidden;
+    /* 上面一行和这一行效果一样 */
+    /* display: none; */
+ }
+
+body {
+    background: burlywood;
+    min-height: 100vh;
+}
+
+
+.main{
+    width: 8px;
+    height: 8px;
+    /* 上下左右居中 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background: red; */
+
+    /* 视距 */
+    perspective: 500px;
+}
+.main .iClass{
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    /* background: rgba(255, 255, 255, 0.5); */
+    background:darkcyan;
+    
+    box-shadow: 0 0 10px 0 white;
+    /* ease-in-out曲线 */
+    animation: animate 3s ease-in-out infinite;
+}
+
+
+/* !之所以是旋转12° 是因为：360➗30个 = 12° 也就是将360分成30个位置，每个位置要间隔12度，也就是每个点以中心为起点，旋转12° */
+/* translateX(80px) 平面移动80px距离，这个圆的直径就为80px了 */
+/* .main i:nth-child(1){
+    transform: rotate(0deg) translateX(80px);
+}
+.main i:nth-child(2){
+    transform: rotate(12deg) translateX(80px);
+}
+.main i:nth-child(3){
+    transform: rotate(24deg) translateX(80px);
+} */
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: translate3d(0,0,560px);
+    }
+   
+}

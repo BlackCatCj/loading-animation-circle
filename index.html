@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading-圆点</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main" id="main_i">
+    </div>
+
+
+    <script>
+        // 循环添加60个i标签
+        var main_i = document.getElementById("main_i");
+        main_i.innerHTML = function () {
+            var arr = [];
+            for (let i = 0; i < 60; i++) {
+                arr.push("<i class='iClass'></i>\n");
+            }
+            return arr.join('');
+        }();
+
+
+        var is = document.getElementsByClassName("iClass");
+        // var is = document.getElementsByTagName("i");
+        for (let i = 0; i < is.length; i++) {
+            is[i].style.transform = `rotate(${i * 12}deg) translateX(80px)`;
+            // 延迟的时间
+            is[i].style.animationDelay = `${i * 0.05}s`;
+        }
+    </script>
+</body>
+
+</html>
